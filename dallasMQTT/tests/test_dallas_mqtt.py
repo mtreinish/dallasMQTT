@@ -33,3 +33,9 @@ class TestWorkerPartition(base.TestCase):
         sensors = [1, 2, 3, 4, 5]
         resp = listener.partition_sensors(sensors, maxworkers)
         self.assertEqual([[1, 2], [3, 4], [5]], resp)
+
+    def test_equal_devs_to_workers(self):
+        maxworkers = 3
+        sensors = [1, 2, 3]
+        resp = listener.partition_sensors(sensors, maxworkers)
+        self.assertEqual([[1], [2], [3]], resp)

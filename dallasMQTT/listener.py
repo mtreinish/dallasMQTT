@@ -96,7 +96,7 @@ def create_mqtt(config):
 
 
 def partition_sensors(sensors, maxthreads):
-    if len(sensors) < maxthreads:
+    if len(sensors) <= maxthreads:
         return [[x] for x in sensors]
     output = []
     for i in range(0, len(sensors), maxthreads):
