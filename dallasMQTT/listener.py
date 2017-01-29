@@ -109,7 +109,7 @@ def main():
     config = _parse_config(sys.argv[1])
     sensor_ids = config['sensors']
 
-    base_topic = 'pi_temp_server'
+    base_topic = 'dallasMQTT'
     if 'default' in config and 'base_topic' in config['default']:
         base_topic = config['default']['base_topic']
 
